@@ -4,6 +4,8 @@
 
 Use this module to create a basic VPC and necessary dependencies so that you can quickly get your EC2 instances created.
 
+Tested with terraform v0.12.16
+
 ## Resources Created
 
 * VPC
