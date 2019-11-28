@@ -54,7 +54,7 @@ resource "aws_default_security_group" "aws_core_dsg" {
     self        = false
     from_port   = 0
     to_port     = 0
-    cidr_blocks = [chomp(data.http.my_ip_address.body)/32]
+    cidr_blocks = ["${chomp(data.http.my_ip_address.body)}/32"]
   }
 
   ingress {
