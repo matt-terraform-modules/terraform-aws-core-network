@@ -62,7 +62,7 @@ resource "aws_default_security_group" "aws_core_dsg" {
     self        = false
     from_port   = 0
     to_port     = 0
-    cidr_blocks = [var.aws_core_vpc_cid]
+    cidr_blocks = [var.aws_core_vpc_cidr]
   }
 
   ingress {
