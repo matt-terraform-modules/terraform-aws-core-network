@@ -2,7 +2,7 @@ resource "aws_vpc" "aws_core_vpc" {
   cidr_block = var.aws_core_vpc_cidr
 
   tags = {
-    Name = ${var.prefix_tag}_VPC
+    Name = "${var.prefix_tag}_VPC"
     Owner = var.owner_tag
     Environment = var.environment_tag
   }
@@ -15,7 +15,7 @@ resource "aws_subnet" "aws_core_subnet1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = ${var.prefix_tag}_SUBNET1
+    Name = "${var.prefix_tag}_SUBNET1"
     Owner = var.owner_tag
     Environment = var.environment_tag
   }
@@ -25,7 +25,7 @@ resource "aws_internet_gateway" "aws_core_igw" {
   vpc_id = aws_vpc.aws_core_vpc.id
 
   tags = {
-    Name = ${var.prefix_tag}_IGW
+    Name = "${var.prefix_tag}_IGW"
     Owner = var.owner_tag
     Environment = var.environment_tag
   }
@@ -40,7 +40,7 @@ resource "aws_default_route_table" "aws_core_rt" {
   }
 
   tags = {
-    Name = ${var.prefix_tag}_RT
+    Name = "${var.prefix_tag}_RT"
     Owner = var.owner_tag
     Environment = var.environment_tag
   }
@@ -81,7 +81,7 @@ resource "aws_default_security_group" "aws_core_dsg" {
   }
 
   tags = {
-    Name = ${var.prefix_tag}_SG
+    Name = "${var.prefix_tag}_SG"
     Owner = var.owner_tag
     Environment = var.environment_tag
   }
