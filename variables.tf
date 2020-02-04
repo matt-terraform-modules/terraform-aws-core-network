@@ -32,3 +32,9 @@ variable "additional_public_cidrs" {
     type = list
     description = "List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32"
 }
+
+variable "aws_core_vpc_enable_dns_hostnames" {
+    type = string
+    description = "Enable DNS hostnames on the VPC"
+    default = "false"
+}

@@ -41,6 +41,7 @@ Security group will create ingress rules that are open to the private network an
 | aws\_core\_az\_1 | Availability zone for first subnet of AWS core network | string | n/a | yes |
 | aws\_core\_subnet\_cidr1 | CIDR block for first subnet of AWS Core network | string | n/a | yes |
 | aws\_core\_vpc\_cidr | VPC CIDR block for the AWS Core VPC | string | n/a | yes |
+| aws\_core\_vpc\_enable\_dns\_hostnames | Enable DNS hostnames on VPC | string | false | no |
 | environment\_tag | Value that will be tagged as ENVIRONMENT, on all AWS resources | string | n/a | yes |
 | owner\_tag | Value that will be tagged as OWNER, on all AWS resources | string | n/a | yes |
 | prefix\_tag | Prefix string added to Name tag | string | n/a | yes |

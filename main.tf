@@ -1,5 +1,6 @@
 resource "aws_vpc" "aws_core_vpc" {
   cidr_block = var.aws_core_vpc_cidr
+  enable_dns_hostnames = var.aws_core_vpc_enable_dns_hostnames
 
   tags = {
     Name = "${var.prefix_tag}_VPC"
