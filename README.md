@@ -21,7 +21,7 @@ In your terraform script:
 ```
 
 module "aws_basic_network" {
-  source = "git::https://cynicholls@bitbucket.org/ecs-group/aws_basic_network.git"
+  source = "git::https://bitbucket.org/ecs-group/aws_basic_network.git"
 
 # VARIABLE DEFINITION
 
