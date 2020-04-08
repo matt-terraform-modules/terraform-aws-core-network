@@ -38,3 +38,9 @@ variable "aws_core_vpc_enable_dns_hostnames" {
     description = "Enable DNS hostnames on the VPC"
     default = "false"
 }
+
+variable "map_public_ip" {
+    type = string
+    description = "Specify true to indicate that instances launched into the subnet should be assigned a public IP address."
+    default = "false"
+}

@@ -43,6 +43,7 @@ Security group will create ingress rules that are open to the private network an
 | aws\_core\_vpc\_cidr | VPC CIDR block for the AWS Core VPC | string | n/a | yes |
 | aws\_core\_vpc\_enable\_dns\_hostnames | Enable DNS hostnames on VPC | string | false | no |
 | environment\_tag | Value that will be tagged as ENVIRONMENT, on all AWS resources | string | n/a | yes |
+| map\_public\_ip | Specify true to indicate that instances launched into the subnet should be assigned a public IP address. | string | false | no |
 | owner\_tag | Value that will be tagged as OWNER, on all AWS resources | string | n/a | yes |
 | prefix\_tag | Prefix string added to Name tag | string | n/a | yes |
 

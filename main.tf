@@ -13,7 +13,7 @@ resource "aws_subnet" "aws_core_subnet1" {
   vpc_id                  = aws_vpc.aws_core_vpc.id
   cidr_block              = var.aws_core_subnet_cidr1
   availability_zone       = var.aws_core_az_1
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = var.map_public_ip
 
   tags = {
     Name = "${var.prefix_tag}_SUBNET1"
