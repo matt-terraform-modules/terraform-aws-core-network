@@ -87,6 +87,7 @@ resource "aws_security_group" "aws_core_sg" {
   }
 
   tags = {
+    Name        = "${var.prefix_tag}_SG"
     Owner       = var.owner_tag
     Environment = var.environment_tag
     ManagedBy   = "Terraform"
