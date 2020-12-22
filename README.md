@@ -51,6 +51,6 @@ Security group will create ingress rules that are open to the private network an
 
 | Name | Description |
 |------|-------------|
-| aws\_sg\_id | AWS Default Security Group ID |
+| aws\_sg\_id | AWS Security Group ID |
 | aws\_subnet\_id | AWS Subnet ID |
 | aws\_vpc\_id | AWS VPC ID |
