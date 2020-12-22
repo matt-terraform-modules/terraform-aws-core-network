@@ -11,8 +11,8 @@ Tested with terraform v0.12.16
 * VPC
 * 1 x Subnet
 * Internet Gateway
-* Default Route Table
-* Default Security Group
+* Route Table
+* Security Group
 
 ## How to reference
 
@@ -51,6 +51,6 @@ Security group will create ingress rules that are open to the private network an
 
 | Name | Description |
 |------|-------------|
-| aws\_default\_sg\_id | AWS Default Security Group ID |
+| aws\_sg\_id | AWS Default Security Group ID |
 | aws\_subnet\_id | AWS Subnet ID |
 | aws\_vpc\_id | AWS VPC ID |
