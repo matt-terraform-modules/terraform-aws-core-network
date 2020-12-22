@@ -23,11 +23,6 @@ module "aws_basic_network" {
 
 ### Variable section
 # Network variables
-variable "aws_region" {
-  description = "The region the AWS provider in which the resources will be running, e.g. eu-west-1 and ap-southeast-1 respectively"
-  type        = string
-}
-
 variable "vpc_cidr" {
   description = "The cidr block range of IP addresses for the virtual private cloud"
   type        = string
@@ -52,6 +47,11 @@ variable "additional_cidrs" {
 }
 
 # General variables
+variable "aws_region" {
+  description = "The region the AWS provider in which the resources will be running, e.g. eu-west-1 and ap-southeast-1 respectively"
+  type        = string
+}
+
 variable "environment_tag" {
   description = "Value that will be tagged as ENVIRONMENT, on all AWS resources"
   type        = string
