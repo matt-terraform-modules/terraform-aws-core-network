@@ -102,3 +102,8 @@ resource "aws_security_group" "aws_core_sg" {
 data "http" "my_ip_address" {
   url = "http://ipv4.icanhazip.com"
 }
+
+#backup alternative
+data "http" "my_ip_address_2" {
+  url = "https://ipv4.wtfismyip.com/text"
+}
