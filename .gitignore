@@ -48,7 +48,8 @@ Thumbs.db
 *.mov
 *.wmv
 
+local_files
 .terraform*
 *.tfvars
 *tfstate*
-local_files
+!.terraform.lock.hcl
