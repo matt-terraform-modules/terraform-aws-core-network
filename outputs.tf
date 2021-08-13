@@ -1,10 +1,10 @@
 output "aws_subnet_id" {
   description = "AWS Subnet ID"
-  value       = aws_subnet.aws_core_subnet1.id
+  value       = aws_subnet.aws_core_subnet.id
 }
 
 output "aws_sg_id" {
-  description = "AWS Default Security Group ID"
+  description = "AWS Security Group ID"
   value       = aws_security_group.aws_core_sg.id
 }
 

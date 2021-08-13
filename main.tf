@@ -1,26 +1,34 @@
+terraform {
+  required_version = ">= 1.0.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 3.40.0"
+    }
+  }
+}
+
+data "http" "my_ip_address" {
+  url = "http://ipv4.icanhazip.com"
+}
+
 resource "aws_vpc" "aws_core_vpc" {
   cidr_block           = var.aws_core_vpc_cidr
   enable_dns_hostnames = var.aws_core_vpc_enable_dns_hostnames
 
   tags = {
-    Name        = "${var.prefix_tag}_VPC"
-    Owner       = var.owner_tag
-    Environment = var.environment_tag
-    ManagedBy   = "Terraform"
+    Name = "${var.project_tag}_VPC"
   }
 }
 
-resource "aws_subnet" "aws_core_subnet1" {
+resource "aws_subnet" "aws_core_subnet" {
   vpc_id                  = aws_vpc.aws_core_vpc.id
-  cidr_block              = var.aws_core_subnet_cidr1
-  availability_zone       = var.aws_core_az_1
+  cidr_block              = var.aws_core_subnet_cidr
+  availability_zone       = var.aws_core_az
   map_public_ip_on_launch = var.map_public_ip
 
   tags = {
-    Name        = "${var.prefix_tag}_SUBNET1"
-    Owner       = var.owner_tag
-    Environment = var.environment_tag
-    ManagedBy   = "Terraform"
+    Name = "${var.project_tag}_SUBNET"
   }
 }
 
@@ -28,10 +36,7 @@ resource "aws_internet_gateway" "aws_core_igw" {
   vpc_id = aws_vpc.aws_core_vpc.id
 
   tags = {
-    Name        = "${var.prefix_tag}_IGW"
-    Owner       = var.owner_tag
-    Environment = var.environment_tag
-    ManagedBy   = "Terraform"
+    Name = "${var.project_tag}_IGW"
   }
 }
 
@@ -44,15 +49,12 @@ resource "aws_route_table" "aws_core_rt" {
   }
 
   tags = {
-    Name        = "${var.prefix_tag}_RT"
-    Owner       = var.owner_tag
-    Environment = var.environment_tag
-    ManagedBy   = "Terraform"
+    Name = "${var.project_tag}_RT"
   }
 }
 
 resource "aws_security_group" "aws_core_sg" {
-  name   = "${var.prefix_tag}_SG"
+  name   = "${var.project_tag}_SG"
   vpc_id = aws_vpc.aws_core_vpc.id
 
   ingress {
@@ -85,15 +87,4 @@ resource "aws_security_group" "aws_core_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  tags = {
-    Name        = "${var.prefix_tag}_SG"
-    Owner       = var.owner_tag
-    Environment = var.environment_tag
-    ManagedBy   = "Terraform"
-  }
-}
-
-data "http" "my_ip_address" {
-  url = "http://ipv4.icanhazip.com"
 }

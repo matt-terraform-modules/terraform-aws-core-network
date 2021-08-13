@@ -1,27 +1,3 @@
-terraform {
-  required_version = ">= 0.12.0"
-}
-
-provider "aws" {
-  region = var.aws_region
-}
-
-# Test code
-module "aws_basic_network" {
-  source = "../"
-
-  aws_core_vpc_cidr       = var.vpc_cidr
-  aws_core_subnet_cidr1   = var.subnet_cidr
-  aws_core_az_1           = var.aws_availability_zone
-  additional_public_cidrs = var.additional_cidrs
-  map_public_ip           = true
-
-  owner_tag       = var.owner_tag
-  environment_tag = var.environment_tag
-  prefix_tag      = var.prefix_tag
-}
-
-### Variable section
 # Network variables
 variable "vpc_cidr" {
   description = "The cidr block range of IP addresses for the virtual private cloud"
@@ -52,17 +28,19 @@ variable "aws_region" {
   type        = string
 }
 
-variable "environment_tag" {
-  description = "Value that will be tagged as ENVIRONMENT, on all AWS resources"
+variable "project_tag" {
+  description = "The tag for the name/id of the project the resource is associated with. Can also be used in the name of resources."
   type        = string
 }
 
 variable "owner_tag" {
-  description = "Value that will be tagged as OWNER, on all AWS resources"
+  description = "Owner tag added to all AWS resources."
   type        = string
 }
 
-variable "prefix_tag" {
-  description = "Prefix string added to Name tag"
+variable "environment_tag" {
+  description = "Value for ENVIRONMENT tag that is applied to all AWS instances."
   type        = string
+  default     = "DEV"
+
 }
