@@ -12,6 +12,11 @@ data "http" "my_ip_address" {
   url = "http://ipv4.icanhazip.com"
 }
 
+#backup alternative
+data "http" "my_ip_address_2" {
+  url = "https://ipv4.wtfismyip.com/text"
+}
+
 resource "aws_vpc" "aws_core_vpc" {
   cidr_block           = var.aws_core_vpc_cidr
   enable_dns_hostnames = var.aws_core_vpc_enable_dns_hostnames
