@@ -3,6 +3,15 @@
 Use this module to create a basic VPC and necessary dependencies so that you can quickly get your EC2 instances created.
 The security group will create ingress rules that are open to the private network and *your* ip address.
 
+# Usage
+```
+module aws_basic_network {
+source = "git::ssh://matthew_song@bitbucket.org/ecs-group/aws_basic_network.git?ref=v2.0.1"
+
+# Insert the variables used here
+}
+```
+
 ## Requirements
 
 | Name | Version |
