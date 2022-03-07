@@ -42,5 +42,4 @@ variable "environment_tag" {
   description = "Value for ENVIRONMENT tag that is applied to all AWS instances."
   type        = string
   default     = "DEV"
-
 }
