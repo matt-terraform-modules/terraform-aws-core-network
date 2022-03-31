@@ -6,7 +6,7 @@ The security group will create ingress rules that are open to the private networ
 # Usage
 ```
 module aws_basic_network {
-source = "git::ssh://matthew_song@bitbucket.org/ecs-group/aws_basic_network.git?ref=v2.0.1"
+source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.2"
 
 # Insert the variables used here
 }

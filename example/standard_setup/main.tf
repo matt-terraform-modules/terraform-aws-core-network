@@ -20,7 +20,7 @@ provider "aws" {
   }
 }
 
-module "aws_basic_network" {
+module "aws_core_network" {
   source = "../../"
 
   aws_core_vpc_cidr       = var.vpc_cidr

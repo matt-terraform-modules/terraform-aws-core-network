@@ -17,7 +17,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aws_basic_network"></a> [aws\_basic\_network](#module\_aws\_basic\_network) | ../../ | n/a |
+| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | ../../ | n/a |
 
 ## Resources
 
