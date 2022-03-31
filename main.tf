@@ -5,6 +5,10 @@ terraform {
       source  = "hashicorp/aws"
       version = ">= 3.40.0"
     }
+    http = {
+      source  = "hashicorp/http"
+      version = ">= 2.1.0"
+    }
   }
 }
 
@@ -12,7 +16,7 @@ data "http" "my_ip_address" {
   url = "http://ipv4.icanhazip.com"
 }
 
-#backup alternative
+# Alternative backup for ip address
 data "http" "my_ip_address_2" {
   url = "https://ipv4.wtfismyip.com/text"
 }

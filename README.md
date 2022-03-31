@@ -1,4 +1,4 @@
-# AWS Basic Network
+# terraform-aws-core-network
 # Description 
 Use this module to create a basic VPC and necessary dependencies so that you can quickly get your EC2 instances created.
 The security group will create ingress rules that are open to the private network and *your* ip address.
@@ -18,13 +18,14 @@ source = "git::ssh://matthew_song@bitbucket.org/ecs-group/aws_basic_network.git?
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.40.0 |
+| <a name="requirement_http"></a> [http](#requirement\_http) | >= 2.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.40.0 |
-| <a name="provider_http"></a> [http](#provider\_http) | n/a |
+| <a name="provider_http"></a> [http](#provider\_http) | >= 2.1.0 |
 
 ## Modules
 
@@ -35,11 +36,13 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_internet_gateway.aws_core_igw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway) | resource |
+| [aws_main_route_table_association.aws_core_rta](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/main_route_table_association) | resource |
 | [aws_route_table.aws_core_rt](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
 | [aws_security_group.aws_core_sg](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
 | [aws_subnet.aws_core_subnet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_vpc.aws_core_vpc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
 | [http_http.my_ip_address](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http) | data source |
+| [http_http.my_ip_address_2](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http) | data source |
 
 ## Inputs
 
@@ -57,6 +60,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_aws_sg_id"></a> [aws\_sg\_id](#output\_aws\_sg\_id) | AWS Security Group ID |
-| <a name="output_aws_subnet_id"></a> [aws\_subnet\_id](#output\_aws\_subnet\_id) | AWS Subnet ID |
-| <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | AWS VPC ID |
+| <a name="output_aws_sg_id"></a> [aws\_sg\_id](#output\_aws\_sg\_id) | The ID of the AWS Security Group |
+| <a name="output_aws_subnet_id"></a> [aws\_subnet\_id](#output\_aws\_subnet\_id) | The ID of the AWS Subnet |
+| <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | The ID of the AWS VPC |

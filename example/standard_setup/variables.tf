@@ -24,22 +24,22 @@ variable "additional_cidrs" {
 
 # General variables
 variable "aws_region" {
-  description = "The region the AWS provider in which the resources will be running, e.g. eu-west-1 and ap-southeast-1 respectively"
+  description = "AWS region to use"
   type        = string
 }
 
 variable "project_tag" {
-  description = "The tag for the name/id of the project the resource is associated with. Can also be used in the name of resources."
+  description = "The tag for the name/id of the project the resource is associated with. Can also be used in the name of resources"
   type        = string
 }
 
 variable "owner_tag" {
-  description = "Owner tag added to all AWS resources."
+  description = "Owner tag applied to all resources"
   type        = string
 }
 
 variable "environment_tag" {
-  description = "Value for ENVIRONMENT tag that is applied to all AWS instances."
+  description = "Environment tag applied to all resources"
   type        = string
   default     = "DEV"
 }
