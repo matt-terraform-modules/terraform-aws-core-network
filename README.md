@@ -53,8 +53,8 @@ No modules.
 | <a name="input_aws_core_subnet_cidr"></a> [aws\_core\_subnet\_cidr](#input\_aws\_core\_subnet\_cidr) | CIDR block for first subnet of AWS Core network | `string` | n/a | yes |
 | <a name="input_aws_core_vpc_cidr"></a> [aws\_core\_vpc\_cidr](#input\_aws\_core\_vpc\_cidr) | VPC CIDR block for the AWS Core VPC | `string` | n/a | yes |
 | <a name="input_aws_core_vpc_enable_dns_hostnames"></a> [aws\_core\_vpc\_enable\_dns\_hostnames](#input\_aws\_core\_vpc\_enable\_dns\_hostnames) | Enable DNS hostnames on the VPC | `string` | `"false"` | no |
-| <a name="input_map_public_ip"></a> [map\_public\_ip](#input\_map\_public\_ip) | Specify true to indicate that instances launched into the subnet should be assigned a public IP address. | `string` | `"false"` | no |
-| <a name="input_project_tag"></a> [project\_tag](#input\_project\_tag) | The tag for the name/id of the project the resource is associated with. Can also be used in the name of resources. | `string` | n/a | yes |
+| <a name="input_map_public_ip"></a> [map\_public\_ip](#input\_map\_public\_ip) | Specify true to indicate that instances launched into the subnet should be assigned a public IP address | `string` | `"false"` | no |
+| <a name="input_project_tag"></a> [project\_tag](#input\_project\_tag) | The tag for the name/id of the project the resource is associated with. Can also be used in the name of resources | `string` | n/a | yes |
 
 ## Outputs
 

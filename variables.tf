@@ -22,14 +22,14 @@ variable "aws_core_az" {
 }
 
 variable "map_public_ip" {
-  description = "Specify true to indicate that instances launched into the subnet should be assigned a public IP address."
+  description = "Specify true to indicate that instances launched into the subnet should be assigned a public IP address"
   type        = string
   default     = "false"
 }
 
 # General variables
 variable "project_tag" {
-  description = "The tag for the name/id of the project the resource is associated with. Can also be used in the name of resources."
+  description = "The tag for the name/id of the project the resource is associated with. Can also be used in the name of resources"
   type        = string
 }
 

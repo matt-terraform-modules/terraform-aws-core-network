@@ -1,5 +1,5 @@
 output "aws_subnet_id" {
-  description = " The ID of the AWS Subnet"
+  description = "The ID of the AWS Subnet"
   value       = aws_subnet.aws_core_subnet.id
 }
 
