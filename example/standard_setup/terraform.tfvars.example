@@ -1,0 +1,11 @@
+# Network variables
+vpc_cidr              = 
+subnet_cidr           = 
+aws_availability_zone = 
+additional_cidrs      = 
+
+# General variables
+aws_region      = 
+project_tag     = 
+owner_tag       = 
+environment_tag = 
