@@ -9,7 +9,7 @@ The security group will create ingress rules that are open to the private networ
 
 ```
 module aws_core_network {
-source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.3"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.3"
 
 # Insert the variables used here
 }
