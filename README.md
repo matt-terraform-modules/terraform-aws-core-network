@@ -1,12 +1,15 @@
 # terraform-aws-core-network
+
 # Description 
+
 Use this module to create a basic VPC and necessary dependencies so that you can quickly get your EC2 instances created.
 The security group will create ingress rules that are open to the private network and *your* ip address.
 
 # Usage
+
 ```
-module aws_basic_network {
-source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.2"
+module aws_core_network {
+source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.3"
 
 # Insert the variables used here
 }
