@@ -1,13 +1,13 @@
 # terraform-aws-core-network
 
-# Description 
+## Description
 
 Use this module to create a basic VPC and necessary dependencies so that you can quickly get your EC2 instances created.
 The security group will create ingress rules that are open to the private network and *your* ip address.
 
-# Usage
+## Usage
 
-```
+```terraform
 module aws_core_network {
   source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.3"
 
@@ -20,15 +20,15 @@ module aws_core_network {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.40.0 |
-| <a name="requirement_http"></a> [http](#requirement\_http) | >= 2.1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.28.0 |
+| <a name="requirement_http"></a> [http](#requirement\_http) | >= 3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.40.0 |
-| <a name="provider_http"></a> [http](#provider\_http) | >= 2.1.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.28.0 |
+| <a name="provider_http"></a> [http](#provider\_http) | >= 3.1.0 |
 
 ## Modules
 
@@ -42,6 +42,10 @@ No modules.
 | [aws_main_route_table_association.aws_core_rta](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/main_route_table_association) | resource |
 | [aws_route_table.aws_core_rt](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
 | [aws_security_group.aws_core_sg](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
+| [aws_security_group_rule.additional_cidr_rules](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.all_egress_rule](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.my_ip_rule](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.vpc_rule](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
 | [aws_subnet.aws_core_subnet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_vpc.aws_core_vpc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
 | [http_http.my_ip_address](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http) | data source |
@@ -51,7 +55,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_additional_public_cidrs"></a> [additional\_public\_cidrs](#input\_additional\_public\_cidrs) | List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32 | `list(any)` | n/a | yes |
+| <a name="input_additional_public_cidrs"></a> [additional\_public\_cidrs](#input\_additional\_public\_cidrs) | List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32 | `list(any)` | `null` | no |
 | <a name="input_aws_core_az"></a> [aws\_core\_az](#input\_aws\_core\_az) | Availability zone for first subnet of AWS core network | `string` | n/a | yes |
 | <a name="input_aws_core_subnet_cidr"></a> [aws\_core\_subnet\_cidr](#input\_aws\_core\_subnet\_cidr) | CIDR block for first subnet of AWS Core network | `string` | n/a | yes |
 | <a name="input_aws_core_vpc_cidr"></a> [aws\_core\_vpc\_cidr](#input\_aws\_core\_vpc\_cidr) | VPC CIDR block for the AWS Core VPC | `string` | n/a | yes |

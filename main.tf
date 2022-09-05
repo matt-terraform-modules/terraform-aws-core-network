@@ -3,11 +3,11 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 3.40.0"
+      version = ">= 4.28.0"
     }
     http = {
       source  = "hashicorp/http"
-      version = ">= 2.1.0"
+      version = ">= 3.1.0"
     }
   }
 }
@@ -71,34 +71,42 @@ resource "aws_security_group" "aws_core_sg" {
   name   = "${var.project_tag}_SG"
   vpc_id = aws_vpc.aws_core_vpc.id
 
-  ingress {
-    protocol    = "-1"
-    self        = false
-    from_port   = 0
-    to_port     = 0
-    cidr_blocks = ["${chomp(data.http.my_ip_address.body)}/32"]
-  }
+}
 
-  ingress {
-    protocol    = "-1"
-    self        = false
-    from_port   = 0
-    to_port     = 0
-    cidr_blocks = [var.aws_core_vpc_cidr]
-  }
+resource "aws_security_group_rule" "my_ip_rule" {
+  type              = "ingress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = "-1"
+  cidr_blocks       = ["${chomp(data.http.my_ip_address.response_body)}/32"]
+  security_group_id = aws_security_group.aws_core_sg.id
+}
 
-  ingress {
-    protocol    = "-1"
-    self        = false
-    from_port   = 0
-    to_port     = 0
-    cidr_blocks = var.additional_public_cidrs
-  }
+resource "aws_security_group_rule" "vpc_rule" {
+  type              = "ingress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = "-1"
+  cidr_blocks       = [var.aws_core_vpc_cidr]
+  security_group_id = aws_security_group.aws_core_sg.id
+}
 
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+resource "aws_security_group_rule" "additional_cidr_rules" {
+  count = var.additional_public_cidrs != null ? 1 : 0 # If null, do not create the rule
+
+  type              = "ingress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = "-1"
+  cidr_blocks       = var.additional_public_cidrs
+  security_group_id = aws_security_group.aws_core_sg.id
+}
+
+resource "aws_security_group_rule" "all_egress_rule" {
+  type              = "ingress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = "-1"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = aws_security_group.aws_core_sg.id
 }

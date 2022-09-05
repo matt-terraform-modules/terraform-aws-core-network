@@ -36,4 +36,5 @@ variable "project_tag" {
 variable "additional_public_cidrs" {
   description = "List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32"
   type        = list(any)
+  default     = null
 }
