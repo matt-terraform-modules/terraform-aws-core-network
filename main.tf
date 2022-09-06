@@ -71,6 +71,9 @@ resource "aws_security_group" "aws_core_sg" {
   name   = "${var.project_tag}_SG"
   vpc_id = aws_vpc.aws_core_vpc.id
 
+  tags = {
+    Name = "${var.project_tag}_security_group"
+  }
 }
 
 resource "aws_security_group_rule" "my_ip_rule" {
@@ -103,7 +106,7 @@ resource "aws_security_group_rule" "additional_cidr_rules" {
 }
 
 resource "aws_security_group_rule" "all_egress_rule" {
-  type              = "ingress"
+  type              = "egress"
   from_port         = 0
   to_port           = 0
   protocol          = "-1"
