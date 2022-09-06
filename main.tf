@@ -67,6 +67,7 @@ resource "aws_route_table" "aws_core_rt" {
   }
 }
 
+# Security Group section
 resource "aws_security_group" "aws_core_sg" {
   name   = "${var.project_tag}_SG"
   vpc_id = aws_vpc.aws_core_vpc.id
@@ -76,6 +77,7 @@ resource "aws_security_group" "aws_core_sg" {
   }
 }
 
+## Ingress rules section
 resource "aws_security_group_rule" "my_ip_rule" {
   type              = "ingress"
   from_port         = 0
@@ -105,6 +107,7 @@ resource "aws_security_group_rule" "additional_cidr_rules" {
   security_group_id = aws_security_group.aws_core_sg.id
 }
 
+## Egress rules section
 resource "aws_security_group_rule" "all_egress_rule" {
   type              = "egress"
   from_port         = 0
