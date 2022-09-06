@@ -9,12 +9,13 @@ The security group will create ingress rules that are open to the private networ
 
 ```terraform
 module aws_core_network {
-  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.3"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v3.0.1"
 
 # Insert the variables used here
 }
 ```
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -70,3 +71,4 @@ No modules.
 | <a name="output_aws_sg_id"></a> [aws\_sg\_id](#output\_aws\_sg\_id) | The ID of the AWS Security Group |
 | <a name="output_aws_subnet_id"></a> [aws\_subnet\_id](#output\_aws\_subnet\_id) | The ID of the AWS Subnet |
 | <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | The ID of the AWS VPC |
+<!-- END_TF_DOCS -->

@@ -2,8 +2,9 @@
 
 ## Description
 
-Example code to use the module.
+A standard setup of the AWS core module.
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -44,3 +45,4 @@ No resources.
 | <a name="output_aws_sg_id"></a> [aws\_sg\_id](#output\_aws\_sg\_id) | The ID of the AWS Security Group |
 | <a name="output_aws_subnet_id"></a> [aws\_subnet\_id](#output\_aws\_subnet\_id) | The ID of the AWS Subnet |
 | <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | The ID of the AWS VPC |
+<!-- END_TF_DOCS -->
