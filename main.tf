@@ -49,11 +49,6 @@ resource "aws_internet_gateway" "aws_core_igw" {
   }
 }
 
-resource "aws_main_route_table_association" "aws_core_rta" {
-  vpc_id         = aws_vpc.aws_core_vpc.id
-  route_table_id = aws_route_table.aws_core_rt.id
-}
-
 resource "aws_route_table" "aws_core_rt" {
   vpc_id = aws_vpc.aws_core_vpc.id
 
@@ -65,6 +60,11 @@ resource "aws_route_table" "aws_core_rt" {
   tags = {
     Name = "${var.project_tag}_RT"
   }
+}
+
+resource "aws_main_route_table_association" "aws_core_rta" {
+  vpc_id         = aws_vpc.aws_core_vpc.id
+  route_table_id = aws_route_table.aws_core_rt.id
 }
 
 # Security Group section
