@@ -15,6 +15,10 @@ module aws_core_network {
 }
 ```
 
+## To-do list
+
+1. Investigate if the CIDR of the VPC for the VPC SG rule can be attributed to the VPC resource instead of the variable. Reasoning: The dependency should be on the resource, since that is the purpose of the security group.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
