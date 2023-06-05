@@ -9,7 +9,7 @@ The security group will create ingress rules that are open to the private networ
 
 ```terraform
 module aws_core_network {
-  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v3.0.3"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v3.0.4"
 
 # Insert the variables used here
 }
@@ -25,14 +25,14 @@ module aws_core_network {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.4.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.64.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.1.0 |
 | <a name="requirement_http"></a> [http](#requirement\_http) | >= 3.2.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.64.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.1.0 |
 | <a name="provider_http"></a> [http](#provider\_http) | >= 3.2.1 |
 
 ## Modules
