@@ -24,16 +24,16 @@ module aws_core_network {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.4.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.1.0 |
-| <a name="requirement_http"></a> [http](#requirement\_http) | >= 3.2.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.11.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.90.0 |
+| <a name="requirement_http"></a> [http](#requirement\_http) | >= 3.4.5 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.1.0 |
-| <a name="provider_http"></a> [http](#provider\_http) | >= 3.2.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.90.0 |
+| <a name="provider_http"></a> [http](#provider\_http) | >= 3.4.5 |
 
 ## Modules
 

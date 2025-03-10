@@ -7,12 +7,12 @@ config {
 # Provider plugins
 plugin "aws" {
     enabled = true
-    version = "0.23.0"
+    version = "0.38.0"
     source  = "github.com/terraform-linters/tflint-ruleset-aws"
 }
 
 # Terraform language rules
-# Link: https://github.com/terraform-linters/tflint/tree/master/docs/rules
+# Link: https://github.com/terraform-linters/tflint-ruleset-terraform/tree/main/docs/rules
 rule "terraform_comment_syntax" {
   enabled = true
 }
@@ -30,6 +30,14 @@ rule "terraform_documented_outputs" {
 }
 
 rule "terraform_documented_variables" {
+  enabled = true
+}
+
+rule "terraform_empty_list_equality" {
+  enabled = true
+}
+
+rule "terraform_map_duplicate_keys" {
   enabled = true
 }
 
@@ -64,5 +72,9 @@ rule "terraform_unused_declarations" {
 }
 
 rule "terraform_unused_required_providers" {
+  enabled = true
+}
+
+rule "terraform_workspace_remote" {
   enabled = true
 }
